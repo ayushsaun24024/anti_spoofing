@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 
 from dataset.asvspoof import ASVspoofDataset
 from utilities.engine import read_configs, Logs
-from architecture.ustc_kxdigit import USTC_KXDIGIT
+from architecture.ensemble_model_2 import ENSEMBLE_MODEL
 from metrics.confusion_matrix import AntiSpoofing_CM_Metrics
 
 def set_seed(seed):
@@ -67,7 +67,7 @@ test_dataloader = DataLoader(dataset=test_dataset,
 def cosine_annealing(step, total_steps, lr_max, lr_min):
     return lr_min + (lr_max - lr_min) * 0.5 * (1 + np.cos(step / total_steps * np.pi))
 
-architecture = USTC_KXDIGIT(num_classes=2)
+architecture = ENSEMBLE_MODEL(num_classes=2)
 
 weight = torch.tensor([0.1, 0.9], dtype=torch.float32).to(DEVICE)
 loss_fn = torch.nn.CrossEntropyLoss(weight=weight)

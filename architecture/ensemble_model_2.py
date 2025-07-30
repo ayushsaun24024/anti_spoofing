@@ -709,9 +709,9 @@ class MFARes2Net(nn.Module):
         
         return output
 
-class USTC_KXDIGIT(nn.Module):
+class ENSEMBLE_MODEL(nn.Module):
     def __init__(self, num_classes=2):
-        super(USTC_KXDIGIT, self).__init__()
+        super(ENSEMBLE_MODEL, self).__init__()
         
         self.wav2vec2 = Wav2Vec2Model.from_pretrained("facebook/wav2vec2-large")
         wav2vec_hidden_size = self.wav2vec2.config.hidden_size
