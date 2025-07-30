@@ -117,12 +117,6 @@ Contributions, suggestions, and feedback are welcome! Feel free to fork this rep
 
 ---
 
-## 📜 License
-
-This repository is released under the **MIT License**. See `LICENSE` file for details.
-
----
-
 ## 🤝 Acknowledgments
 
 - ASVspoof 2024 Challenge Team for the dataset and protocol.
